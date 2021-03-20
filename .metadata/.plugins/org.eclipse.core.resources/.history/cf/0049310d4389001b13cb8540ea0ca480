@@ -1,0 +1,33 @@
+package com.cos.myjpa.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cos.myjpa.domain.song.Song;
+import com.cos.myjpa.domain.song.SongRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+public class SongService {
+
+	private final SongRepository musicRepository;
+
+	
+	public Song 음악저장하기(Song music) {	
+		//Music music = new Music(null, "Celebrity", "아이유", "http://192.168.10.225:8080/001 아이유(IU) - Celebrity.mp3");
+		musicRepository.save(music);
+		
+		return music;
+	}
+	
+	
+	public List<Song> 음악전체찾기(){
+		List<Song> musics = musicRepository.findAll();
+		return musics;
+	}
+	
+	
+}

@@ -1,0 +1,7 @@
+1616219311472	Rename package 'com.cos.myjpa.domain.music'
+1616219442455	Rename type 'Music'
+1616219451738	Rename resource 'musiclist'
+1616220112231	Rename type 'MusicRepository'
+1616220354509	Delete element
+1616220605606	Rename type 'MusicService'
+1616221890109	Delete elements
