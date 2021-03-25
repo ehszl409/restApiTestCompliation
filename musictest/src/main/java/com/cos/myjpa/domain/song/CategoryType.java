@@ -1,7 +1,6 @@
 package com.cos.myjpa.domain.song;
 
 public enum CategoryType {
-
-	POP, ROCK
 	
+	POP, ROCK, HIPHOP, BALLADE
 }

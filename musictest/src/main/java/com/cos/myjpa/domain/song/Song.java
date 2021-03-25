@@ -36,24 +36,15 @@ public class Song {
 	@Enumerated(EnumType.STRING) 
 	private CategoryType category;
 	
-	
-	@Column(nullable = false)
 	private Integer duration;
 	
 	@Lob
-	@Column(nullable = false)
 	private String lyrics;
 
-	
-	@Column(nullable = false)
 	private String date;
-	
-	@Column(nullable = false)
 	private String img;
 	
-	
 	//private List<> 
-	
 		
 	@Column(nullable = false)
 	private String file;

@@ -1,20 +1,10 @@
 package com.cos.myjpa.web;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.myjpa.domain.song.Song;
@@ -50,6 +40,19 @@ public class testController {
 
 		return new CommonRespDto<>(1,"성공",songService.노래전체찾기());
 	}
+	
+	
+//	@GetMapping("/??????????????????")
+//	public CommonRespDto<?> findByKeyword(){
+//		
+//		return new CommonRespDto<>(0, null, null);
+//	}
+//	
+//	@GetMapping("/??????????????????")
+//	public CommonRespDto<?> findByCategory(){
+//		
+//		return new CommonRespDto<>(0, null, null);
+//	}
 	
 
 //	@GetMapping("/{fileName}")

@@ -1,0 +1,184 @@
+package com.cos.myjpa;
+
+import java.util.Arrays;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.cos.myjpa.domain.song.CategoryType;
+import com.cos.myjpa.domain.song.Lyrics;
+import com.cos.myjpa.domain.song.Song;
+import com.cos.myjpa.domain.song.SongRepository;
+
+@SpringBootApplication
+public class MusictestApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MusictestApplication.class, args);
+		
+	}
+	
+	
+	@Bean
+	public CommandLineRunner dataInit(SongRepository songRepository) {
+		
+		String lyrics1 = "눈을 감으면 태양의 저 편에서 들려오는 멜로디\n"
+				+ "내게 속삭이지 이제 그만 일어나 어른이 될 시간이야\n"
+				+ "너 자신을 시험해 봐 길 을 떠나야 해\n"
+				+ "니가 흘린 눈물이\n"
+				+ "마법의 주문이 되어 너의 여린 마음을 자라나게 할거야\n"
+				+ "남들이 뭐래도 네가 믿는 것들을 포기하려 하거나 움츠려\n"
+				+ "들지만 힘이 들 땐\n"
+				+ "절대 뒤를 돌아보지마 앞만 보며 날아가야 해\n"
+				+ "너의 꿈을 비웃는 자는 애써 상대 하지마 변명하려\n"
+				+ "입을 열지마 그저 웃어 버리는 거야 아직 시간이 남아있어\n"
+				+ "너의 날개는 펴질거야\n"
+				+ "Now we are flying to the universe\n"
+				+ "마음이 이끄는 곳 높은 곳으로 날아가\n"
+				+ "절대 뒤를 돌아보지마 앞만 보며 날아가야 해\n"
+				+ "너의 꿈을 비웃는 자는 애써 상대하지마 변명하려\n"
+				+ "입을 열지마 그저 웃어 버리는 거야 아직 시간이 남아있어\n"
+				+ "너의 날개는 펴질거야 더 높이\n"
+				+ "더 멀 리 너의 별을\n"
+				+ "찾아 날아라\n"
+				+ "소년아, 저 모든 별들은 너보다 먼저 떠난\n"
+				+ "사람들이 흘린 눈물이란다 세상을 알게 된 두려움에\n"
+				+ "흘린 저 눈물이 이 다음 에 올 사람들을 인도하고 있는 것이지";
+		
+		String lyrics2="This crying and hope have you want me\n"
+				+ "\n"
+				+ "내 모든 것도 오늘로 다 끝이 나겠지\n"
+				+ "한 잔 술에 네 기억의 난 그 자리\n"
+				+ "you and I 거짓으로 벌한 거라면\n"
+				+ "난 지키고 있을게 너와 내게\n"
+				+ "my hero (내게는 항상)\n"
+				+ "my hero (whom it spreads out)\n"
+				+ "내 모든 거짓 내 모든 가식\n"
+				+ "내 모든 악을 버리겠어\n"
+				+ "She said “love is dare\n"
+				+ "and this is the only love”\n"
+				+ "내 꿈이여 희망이여 빛이여\n"
+				+ "my hero (내게는 항상)\n"
+				+ "my hero (whom it spreads out)\n"
+				+ "내 모든 거짓 내 모든 가식\n"
+				+ "내 모든 악을 버리겠어\n"
+				+ "\n"
+				+ "my hero\n"
+				+ "My love is devotion only you always you\n"
+				+ "(You are my sun My love is devotion!\n"
+				+ "My love only you\n"
+				+ "Always you You are my sun\n"
+				+ "My love is devotion! My love only you always you)";
+		
+		
+		String lyrics3="눈을 뜨자마자 널 생각했어 오늘부턴 볼 수 없는데\n"
+				+ "어제처럼 햇살은 또 눈이 부셔 눈물이나 잊어야 하는데\n"
+				+ "듣고 싶어 내가 처음 반했던 그 목소리 보고 싶어 다시 한번 너의 그 눈빛\n"
+				+ "시간은 자꾸만 흐르고 눈물도 자꾸 흘렀지 그대로 널 안은 채 영원히 영원히 영원히\n"
+				+ "널 잊겠어 말은 했지만 가슴 아파 다 거짓말이야\n"
+				+ "먼 훗날에 널 잊은듯해도 거짓말이야 다 거짓말이야\n"
+				+ "잊어야 하는데\n"
+				+ "난 언제나 매일 같은 꿈을 꾸곤 했지 네가 언젠가 내 곁에서 멀리 떠나는\n"
+				+ "꿈은 항상 반대라고 이렇게 난 널 떠나네 이젠 만질 수 없는 널 사랑해 사랑해 사랑해\n"
+				+ "널 잊겠어 말은 했지만 가슴 아파 다 거짓말이야\n"
+				+ "먼 훗날에 널 잊은듯해도 거짓말이야 다 거짓말이야\n"
+				+ "잊어야 하는데 잊어야 하는데 잊어야 하는데 잊어야 해\n"
+				+ "널 잊겠어 말은 했지만 가슴 아파 다 거짓말이야\n"
+				+ "먼 훗날에 너를 만나서 다시 한번 사랑할 수 있을까\n"
+				+ "잊어야 하는데…"; 
+		
+		String lyrics4="난 옅은 잠에서 깨어나\n"
+				+ "새벽별을 보고 문득 눈물이 났죠\n"
+				+ "\n"
+				+ "바보 같은 세월 나를 떠나간 꿈들에\n"
+				+ "회색도시를 닮아 버린 나를 본거죠\n"
+				+ "\n"
+				+ "내 삶에 마지막 날에 어린 시절에 꿈을 기억조차도 할 수 없다면\n"
+				+ "너무나 슬퍼질것만 같아\n"
+				+ "\n"
+				+ "그래 꿈을 찾아서\n"
+				+ "푸르른 섬을 찾아서 다시 떠나가보자\n"
+				+ "바다향기 가득한 곳으로\n"
+				+ "타오르게\n"
+				+ "먼지 속에 뭍혀버린 가슴이 불타오르게 타버리게\n"
+				+ "푸른 그 섬으로\n"
+				+ "\n"
+				+ "이 거친 파도와 매서운 바람마저\n"
+				+ "내겐 아주 오랜 친구일뿐야\n"
+				+ "(내 낡은 서랍을 열어 먼지 가득히 쌓인)\n"
+				+ "내 오랜 일기장을 펼쳐라\n"
+				+ "보물지도가 되어 줄테니\n"
+				+ "\n"
+				+ "다시 꿈을 찾아서 그 섬을 찾아서\n"
+				+ "푸른 내 꿈을 찾아서\n"
+				+ "세상 그 무엇보다 밝게 빛나던 꿈을 찾아서\n"
+				+ "타오르게\n"
+				+ "먼지 속에 뭍혀버린 내 기억이 숨쉬도록 말하도록 용기를 깨우는 주문을\n"
+				+ "my island ..my island..my sunshine..my sunlight\n"
+				+ "my island ..my island..my sunshine..my sunlight\n"
+				+ "\n"
+				+ "저 푸른 어둠을 찢고서\n"
+				+ "해가 떠오르면 먼 여행을 떠나리"; 
+		
+		String lyrics5="안녕하세요\n"
+				+ "적당히 바람이 시원해 기분이 너무 좋아요 유후\n"
+				+ "끝내줬어요\n"
+				+ "긴장한 탓에 엉뚱한 얘기만 늘어놓았죠 바보같이\n"
+				+ "\n"
+				+ "한 잔 했어요\n"
+				+ "속상한 마음 조금 달래려고 나 이뻐요? 히~\n"
+				+ "기분이 좋아요\n"
+				+ "앗싸 알딸딸한게 뿅뿅 가네요 몰라요\n"
+				+ "\n"
+				+ "이정도로 나왔어도 즐겁잖아요\n"
+				+ "한 번의 실수쯤은 눈감아 줄 수는 없나요\n"
+				+ "나나나나나나나나 노래나 할까요\n"
+				+ "더 잘 할 수 있었는데 It's a beautiful day\n"
+				+ "\n"
+				+ "좀 쌀쌀하네요\n"
+				+ "차가운 바람이 휙~ 가슴을 쓰네요 아프게\n"
+				+ "걱정은 안해요\n"
+				+ "이젠 익숙해질 때도 되버린거죠 한두 번도 아닌데\n"
+				+ "\n"
+				+ "울어도 되나요\n"
+				+ "가끔은 혼자 펑펑 울고 털고 싶어요 엉엉~\n"
+				+ "이젠 괜찮아요\n"
+				+ "딱 한잔만 더 할께요 잘 부탁드립니다\n"
+				+ "\n"
+				+ "이정도로 나왔어도 즐겁잖아요\n"
+				+ "한 번의 실수쯤은 눈감아 줄 수는 없나요\n"
+				+ "나나나나나나나나 노래나 할까요\n"
+				+ "더 잘 할 수 있었는데 It's a beautiful day\n"
+				+ "\n"
+				+ "이정도로 나왔어도 즐겁잖아요\n"
+				+ "한 번의 실수쯤은 눈감아 줄 수는 없나요\n"
+				+ "나나나나나나나나 노래나 할까요?\n"
+				+ "더 잘 할 수 있었는데 It's a beautiful day\n"
+				+ "\n"
+				+ "안녕히 계세요\n"
+				+ "지금까지 제 얘길 들어줘 정말 고마워요\n"
+				+ "\n"
+				+ "잘 부탁드립니다"; 
+		
+		
+		
+		
+		return (args) -> {
+			// 데이터 초기화 하기
+			songRepository.saveAll(Arrays.asList(
+					new Song(null, "해에게서 소년에게", "N.E.X.T", CategoryType.ROCK, 10000, lyrics1, "1997.11", "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2451334B573419A20E", "N.E.X.T - 해에게서 소년에게.mp3"),
+					new Song(null, "Hero", "Vanila Unity", CategoryType.ROCK, 10000, lyrics2, "2002.10", "https://i.ytimg.com/vi/cnjaaQ7MStc/maxresdefault.jpg", "Vanilla Unity - Hero.mp3"),
+					new Song(null, "거짓말", "뷰렛", CategoryType.ROCK, 10000, lyrics3, "2002.03", "https://s.mxmcdn.net/images-storage/albums8/2/0/6/4/3/8/11834602_350_350.jpg", "뷰렛 - 거짓말.mp3"),
+					new Song(null, "보물섬으로의 항해", "스프링쿨러", CategoryType.ROCK, 10000, lyrics4, "2000. 03", "http://image.yes24.com/goods/2713357/1150x1150", "스프링쿨러(Sprinkler) - 보물섬으로의 항해.mp3"),
+					new Song(null, "잘부탁드립니다", "익스", CategoryType.ROCK, 10000, lyrics5, "2004. 06", "https://i.ytimg.com/vi/KKyiiqBgoqo/hqdefault.jpg", "익스 - 잘부탁드립니다.mp3")
+					
+					
+//					new Person("홍길동", "프로그래머", "0102222"),
+
+					)
+			);
+		};
+	}
+}

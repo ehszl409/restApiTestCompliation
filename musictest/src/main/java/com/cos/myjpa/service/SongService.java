@@ -17,10 +17,9 @@ public class SongService {
 
 	
 	public Song 노래저장하기(Song song) {	
-		//Music music = new Music(null, "Celebrity", "아이유", "http://192.168.10.225:8080/001 아이유(IU) - Celebrity.mp3");
 		songRepository.save(song);
-		
 		return song;
+		
 	}
 	
 	
