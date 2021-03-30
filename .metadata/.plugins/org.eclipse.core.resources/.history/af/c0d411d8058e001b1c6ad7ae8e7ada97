@@ -1,0 +1,13 @@
+package com.cos.myjpa.domain.song;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SongRepository extends JpaRepository<Song, Integer> {
+	
+	List<Song> findByCategory(String category);
+	
+	
+	
+}

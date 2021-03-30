@@ -1,0 +1,7 @@
+package com.cos.myjpa.domain.playsong;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PlaySongRepository extends JpaRepository<PlaySong, Integer>{
+
+}

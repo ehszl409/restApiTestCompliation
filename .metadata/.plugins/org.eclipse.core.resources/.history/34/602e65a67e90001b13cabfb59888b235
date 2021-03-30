@@ -1,0 +1,30 @@
+package com.cos.myjpa.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cos.myjpa.domain.playsong.PlaySong;
+import com.cos.myjpa.domain.playsong.PlaySongRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
+public class PlaySongService {
+
+	private final PlaySongRepository playSongRepository;
+	
+	public List<PlaySong> 전체찾기() {
+		return playSongRepository.findAll();
+	}
+	
+	public PlaySong 노래추가(PlaySong playSong) {
+		
+		playSongRepository.save(playSong);
+		
+		return playSong;
+	}
+	
+	
+}

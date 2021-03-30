@@ -1,0 +1,31 @@
+package com.cos.myjpa.web;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cos.myjpa.service.PlaySongService;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@RestController
+public class PlaySongController { //내 재생목록
+
+	private final PlaySongService playSongService;
+	
+	
+	@GetMapping("/playSong")
+	public void findAll() {
+		
+		
+	}
+	
+	
+	@PostMapping("/playSong")
+	public void save() {
+		
+	}
+	
+	
+}

@@ -1,0 +1,26 @@
+package com.cos.myjpa.domain.playsong;
+
+import java.sql.Timestamp;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.cos.myjpa.domain.song.Song;
+
+public class PlaySong {
+	
+	@Id //Pk
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Table, auto_increment, Sequence 
+	private Integer id;
+
+	private Song song;
+	
+	@CreationTimestamp //자동으로 현재시간이 들어감
+	private Timestamp createDate;
+
+	
+	
+}

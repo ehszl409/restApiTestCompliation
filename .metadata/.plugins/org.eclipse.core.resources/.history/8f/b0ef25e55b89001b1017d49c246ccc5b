@@ -1,9 +1,0 @@
-package com.cos.myjpa.domain.song;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.cos.myjpa.domain.music.Music;
-
-public interface MusicRepository extends JpaRepository<Music, Integer> {
-
-}
