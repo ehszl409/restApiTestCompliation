@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cos.myjpa.domain.storage.Storage;
 import com.cos.myjpa.service.StorageService;
 import com.cos.myjpa.web.dto.CommonRespDto;
+import com.cos.myjpa.web.dto.storage.StorageSaveDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -34,8 +35,8 @@ public class StorageController {
 	}
 	
 	@PostMapping("/storage")
-	public CommonRespDto<?> storageSave(@RequestBody Storage storage){
-		storageService.저장하기(storage);
+	public CommonRespDto<?> storageSave(@RequestBody StorageSaveDto storageSaveDto){
+		storageService.저장하기(storageSaveDto.toEntity());
 		return new CommonRespDto<>(1, "성공", "추가하기 성공");
 	}
 	
