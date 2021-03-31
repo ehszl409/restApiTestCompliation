@@ -11,6 +11,8 @@ import com.cos.myjpa.domain.song.CategoryType;
 import com.cos.myjpa.domain.song.Lyrics;
 import com.cos.myjpa.domain.song.Song;
 import com.cos.myjpa.domain.song.SongRepository;
+import com.cos.myjpa.domain.storage.Storage;
+import com.cos.myjpa.domain.storage.StorageRepository;
 
 @SpringBootApplication
 public class MusictestApplication {
@@ -22,7 +24,7 @@ public class MusictestApplication {
 	
 	
 	@Bean
-	public CommandLineRunner dataInit(SongRepository songRepository) {
+	public CommandLineRunner dataInit(SongRepository songRepository, StorageRepository storageRepo ) {
 		
 		String lyrics1 = "눈을 감으면 태양의 저 편에서 들려오는 멜로디\n"
 				+ "내게 속삭이지 이제 그만 일어나 어른이 될 시간이야\n"
@@ -613,6 +615,13 @@ public class MusictestApplication {
 
 					)
 			);
+			
+			storageRepo.saveAll(Arrays.asList(
+					new Storage(null, "테스트 리스트1"),
+					new Storage(null, "테스트 리스트2"),
+					new Storage(null, "테스트 리스트3")
+					));
 		};
+		
 	}
 }
